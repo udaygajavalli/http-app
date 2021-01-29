@@ -1,9 +1,11 @@
-<div class="d-flex flex-row justify-content-around ">
-  <div class="card bg-dark m-3" *ngFor="let obj of data">
-    <img class="card-img-top" src="{{obj.avatar}}">
-    <div class="card-body">
-      <h4 class="card-title text-white">{{obj.first_name}} {{obj.last_name}}</h4>
-      <p class="card-text text-white">{{obj.email}}</p>
+<div class="row row-cols-1 row-cols-md-6 g-4 ">
+  <div class="col" *ngFor="let obj of data">
+    <div class="card bg-dark m-3">
+      <img class="card-img-top" src="{{obj.avatar}}">
+      <div class="card-body">
+        <h4 class="card-title text-white">{{obj.first_name}} {{obj.last_name}}</h4>
+        <p class="card-text text-white">{{obj.email}}</p>
+      </div>
     </div>
   </div>
 </div>
