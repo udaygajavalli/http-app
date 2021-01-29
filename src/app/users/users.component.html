@@ -1,0 +1,24 @@
+<div class=" mt-1 table-responsive">
+  <table class="table table-dark table-striped table-hover">
+    <thead class="thead-inverse bg-dark text-white">
+      <tr class="text-center">
+        <th>Name</th>
+        <th>Username</th>
+        <th>Address</th>
+        <th>Geo Location</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of data" class="text-center">
+        <td scope="row"> {{obj.name}}</td>
+        <td>{{obj.username}}</td>
+        <td> {{obj.address.street + ", " + obj.address.suite + ", " + obj.address.city + ", " +  obj.address.zipcode}}
+        </td>
+        <td> {{ "Lat: " + obj.address.geo.lat + " Long: " + obj.address.geo.lng}} </td>
+        <td> {{obj.company.name + " - " + obj.company.catchPhrase}} </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

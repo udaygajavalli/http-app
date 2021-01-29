@@ -1,0 +1,10 @@
+<div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+  <div class="col" *ngFor="let obj of data">
+    <div [ngClass]="obj.completed ? 'card  bg-success m-3' : 'card bg-danger m-3'" >
+      <h6 class="card-header text-white fw-bold"> {{obj.completed}}</h6>
+      <div class="card-body text-white">
+        <h5 class="card-title">{{obj.title}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
