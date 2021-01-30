@@ -8,7 +8,8 @@ import { DataserviceService } from '../dataservice.service';
 })
 export class UsersComponent implements OnInit {
   data: any;
-
+  searchTerm: string = '';
+  sortBy:any;
   constructor(private ds: DataserviceService) {}
 
   ngOnInit(): void {
