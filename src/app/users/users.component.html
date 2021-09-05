@@ -1,14 +1,14 @@
 <div class="container input-group mt-3">
   <div class="form-group">
-    <select class="form-control" [(ngModel)]='sortBy' name="sortBy">SortBy
+    <select class="form-control chosen" [(ngModel)]='sortBy' name="sortBy" title="Some placeholder text...">
+      <option [ngValue]="null"> Please Choose </option>
       <option value='name'>Name</option>
       <option value='username'>Username</option>
       <option value='address'>Address</option>
       <option value='company'>Company</option>
     </select>
   </div>
-  <input [(ngModel)]="searchTerm" type="text" class="form-control" aria-label="Text input with dropdown button"
-    placeholder="Enter Search String...">
+  <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Enter Search String...">
 </div>
 
 <div class="mt-3 table-responsive container">
@@ -26,7 +26,8 @@
       <tr *ngFor="let obj of data | search:sortBy:searchTerm" class="text-center">
         <td scope="row"> {{obj.name}}</td>
         <td>{{obj.username}}</td>
-        <td> {{obj.address?.street + ", " + obj.address?.suite + ", " + obj.address?.city + ", " +  obj.address?.zipcode}}
+        <td>
+          {{obj.address?.street + ", " + obj.address?.suite + ", " + obj.address?.city + ", " +  obj.address?.zipcode}}
         </td>
         <td> {{ "Lat: " + obj.address?.geo?.lat + " Long: " + obj.address?.geo?.lng}} </td>
         <td> {{obj.company?.name + " - " + obj.company?.catchPhrase}} </td>
